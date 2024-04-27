@@ -11,11 +11,16 @@ Have an idea for a new feature or improvement? We'd love to hear it! Please subm
 #### Code Contributions
 If you're a developer interested in contributing code to Odyssey Eden, please follow these steps:
 
-Fork the repository on GitHub.
-Create a new branch for your changes.
-Make your changes and commit them with clear, descriptive commit messages.
-Push your changes to your fork.
-Submit a pull request to the main repository, explaining the purpose of your changes and any relevant details.
+1. Fork the repository on GitHub.
+
+2. Create a new branch for your changes.
+
+3. Make your changes and commit them with clear, descriptive commit messages.
+
+4. Push your changes to your fork.
+
+5. Submit a pull request to the main repository, explaining the purpose of your changes and any relevant details.
+
 We'll review your pull request as soon as possible and provide feedback or merge it into the main codebase if it meets our quality standards.
 
 #### Art and Design Contributions
