@@ -40,8 +40,8 @@ Venture into the unknown and unlock the true potential of Odyssey Eden with each
 
 Odyssey Eden beckons adventurers of all stripes to join us on this exhilarating journey. Explore our contributing guidelines and become part of gaming history.
 
-# Please Note:
-### Odyssey Eden may contain content suitable for mature audiences aged 18 and above.
+## Please Note:
+#### Odyssey Eden may contain content suitable for mature audiences aged 18 and above.
 
 ## License:
 This project is licensed under the GNU General Public License Version 2, ensuring that it remains freely accessible and modifiable for all.
