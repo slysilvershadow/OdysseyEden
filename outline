@@ -1,0 +1,24 @@
+A mobile game written in python
+1. Game Genre:
+   - 2D pixel art top-down role-playing life simulation tribe management game.
+2. Key Features:
+   - Randomly generated worlds.
+   - Artificial intelligence for NPCs and enemies.
+   - Living and evolving ecosystem in the background.
+   - No storyline, focusing on survival and evolution.
+   - Eventually expands to become an MMORPG on mobile devices.
+3. **Gameplay Mechanics:**
+   - Play through generations as the tribe leader's offspring.
+   - Face challenges of diplomacy, violence, romance, and evolution.
+   - Procedurally generated art for characters and wildlife.
+   - Genetics system replicating real-life genetics.
+   - Each playthrough is unique, with no two being alike.
+   - Challenging gameplay without being impossible.
+   - Unlock new features, survival mechanics, and genetic enhancements with each playthrough.
+4. **Progression System:**
+   - Unlock new content through multiple playthroughs.
+   - Acquire survival mechanics and genetic enhancements.
+5. Themes:
+   - Incorporates elements of violence and romance within the gameplay mechanics.
+6. Overall Goal:
+   - Survive and thrive through generations, facing various challenges and evolving the tribe.
