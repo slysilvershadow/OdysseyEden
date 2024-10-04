@@ -67,7 +67,7 @@ include CMakeFiles/ExperimentalSubmit.dir/compiler_depend.make
 include CMakeFiles/ExperimentalSubmit.dir/progress.make
 
 CMakeFiles/ExperimentalSubmit:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ExperimentalSubmit
+	/usr/local/bin/ctest -D ExperimentalSubmit
 
 ExperimentalSubmit: CMakeFiles/ExperimentalSubmit
 ExperimentalSubmit: CMakeFiles/ExperimentalSubmit.dir/build.make

@@ -67,7 +67,7 @@ include CMakeFiles/NightlyCoverage.dir/compiler_depend.make
 include CMakeFiles/NightlyCoverage.dir/progress.make
 
 CMakeFiles/NightlyCoverage:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D NightlyCoverage
+	/usr/local/bin/ctest -D NightlyCoverage
 
 NightlyCoverage: CMakeFiles/NightlyCoverage
 NightlyCoverage: CMakeFiles/NightlyCoverage.dir/build.make

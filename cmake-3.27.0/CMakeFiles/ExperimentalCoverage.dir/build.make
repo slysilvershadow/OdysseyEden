@@ -67,7 +67,7 @@ include CMakeFiles/ExperimentalCoverage.dir/compiler_depend.make
 include CMakeFiles/ExperimentalCoverage.dir/progress.make
 
 CMakeFiles/ExperimentalCoverage:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ExperimentalCoverage
+	/usr/local/bin/ctest -D ExperimentalCoverage
 
 ExperimentalCoverage: CMakeFiles/ExperimentalCoverage
 ExperimentalCoverage: CMakeFiles/ExperimentalCoverage.dir/build.make

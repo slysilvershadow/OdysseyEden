@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousCoverage.dir/compiler_depend.make
 include CMakeFiles/ContinuousCoverage.dir/progress.make
 
 CMakeFiles/ContinuousCoverage:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ContinuousCoverage
+	/usr/local/bin/ctest -D ContinuousCoverage
 
 ContinuousCoverage: CMakeFiles/ContinuousCoverage
 ContinuousCoverage: CMakeFiles/ContinuousCoverage.dir/build.make

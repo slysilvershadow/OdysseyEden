@@ -67,7 +67,7 @@ include CMakeFiles/NightlyTest.dir/compiler_depend.make
 include CMakeFiles/NightlyTest.dir/progress.make
 
 CMakeFiles/NightlyTest:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D NightlyTest
+	/usr/local/bin/ctest -D NightlyTest
 
 NightlyTest: CMakeFiles/NightlyTest
 NightlyTest: CMakeFiles/NightlyTest.dir/build.make

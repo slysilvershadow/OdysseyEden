@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousStart.dir/compiler_depend.make
 include CMakeFiles/ContinuousStart.dir/progress.make
 
 CMakeFiles/ContinuousStart:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ContinuousStart
+	/usr/local/bin/ctest -D ContinuousStart
 
 ContinuousStart: CMakeFiles/ContinuousStart
 ContinuousStart: CMakeFiles/ContinuousStart.dir/build.make

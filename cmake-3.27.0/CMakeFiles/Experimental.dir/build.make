@@ -67,7 +67,7 @@ include CMakeFiles/Experimental.dir/compiler_depend.make
 include CMakeFiles/Experimental.dir/progress.make
 
 CMakeFiles/Experimental:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D Experimental
+	/usr/local/bin/ctest -D Experimental
 
 Experimental: CMakeFiles/Experimental
 Experimental: CMakeFiles/Experimental.dir/build.make

@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousMemCheck.dir/compiler_depend.make
 include CMakeFiles/ContinuousMemCheck.dir/progress.make
 
 CMakeFiles/ContinuousMemCheck:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ContinuousMemCheck
+	/usr/local/bin/ctest -D ContinuousMemCheck
 
 ContinuousMemCheck: CMakeFiles/ContinuousMemCheck
 ContinuousMemCheck: CMakeFiles/ContinuousMemCheck.dir/build.make

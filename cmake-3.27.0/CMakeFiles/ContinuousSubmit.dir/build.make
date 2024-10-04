@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousSubmit.dir/compiler_depend.make
 include CMakeFiles/ContinuousSubmit.dir/progress.make
 
 CMakeFiles/ContinuousSubmit:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ContinuousSubmit
+	/usr/local/bin/ctest -D ContinuousSubmit
 
 ContinuousSubmit: CMakeFiles/ContinuousSubmit
 ContinuousSubmit: CMakeFiles/ContinuousSubmit.dir/build.make

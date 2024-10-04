@@ -67,7 +67,7 @@ include CMakeFiles/ContinuousUpdate.dir/compiler_depend.make
 include CMakeFiles/ContinuousUpdate.dir/progress.make
 
 CMakeFiles/ContinuousUpdate:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ContinuousUpdate
+	/usr/local/bin/ctest -D ContinuousUpdate
 
 ContinuousUpdate: CMakeFiles/ContinuousUpdate
 ContinuousUpdate: CMakeFiles/ContinuousUpdate.dir/build.make

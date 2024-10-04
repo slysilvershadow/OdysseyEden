@@ -67,7 +67,7 @@ include CMakeFiles/NightlySubmit.dir/compiler_depend.make
 include CMakeFiles/NightlySubmit.dir/progress.make
 
 CMakeFiles/NightlySubmit:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D NightlySubmit
+	/usr/local/bin/ctest -D NightlySubmit
 
 NightlySubmit: CMakeFiles/NightlySubmit
 NightlySubmit: CMakeFiles/NightlySubmit.dir/build.make

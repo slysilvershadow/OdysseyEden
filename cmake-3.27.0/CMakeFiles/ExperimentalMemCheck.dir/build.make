@@ -67,7 +67,7 @@ include CMakeFiles/ExperimentalMemCheck.dir/compiler_depend.make
 include CMakeFiles/ExperimentalMemCheck.dir/progress.make
 
 CMakeFiles/ExperimentalMemCheck:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ExperimentalMemCheck
+	/usr/local/bin/ctest -D ExperimentalMemCheck
 
 ExperimentalMemCheck: CMakeFiles/ExperimentalMemCheck
 ExperimentalMemCheck: CMakeFiles/ExperimentalMemCheck.dir/build.make

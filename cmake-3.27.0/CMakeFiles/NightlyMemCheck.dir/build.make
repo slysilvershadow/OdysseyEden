@@ -67,7 +67,7 @@ include CMakeFiles/NightlyMemCheck.dir/compiler_depend.make
 include CMakeFiles/NightlyMemCheck.dir/progress.make
 
 CMakeFiles/NightlyMemCheck:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D NightlyMemCheck
+	/usr/local/bin/ctest -D NightlyMemCheck
 
 NightlyMemCheck: CMakeFiles/NightlyMemCheck
 NightlyMemCheck: CMakeFiles/NightlyMemCheck.dir/build.make

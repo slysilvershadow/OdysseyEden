@@ -67,7 +67,7 @@ include CMakeFiles/ExperimentalUpdate.dir/compiler_depend.make
 include CMakeFiles/ExperimentalUpdate.dir/progress.make
 
 CMakeFiles/ExperimentalUpdate:
-	CMAKE_CTEST_COMMAND-NOTFOUND -D ExperimentalUpdate
+	/usr/local/bin/ctest -D ExperimentalUpdate
 
 ExperimentalUpdate: CMakeFiles/ExperimentalUpdate
 ExperimentalUpdate: CMakeFiles/ExperimentalUpdate.dir/build.make

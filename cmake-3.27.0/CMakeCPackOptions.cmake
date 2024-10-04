@@ -314,7 +314,7 @@ if("${CPACK_GENERATOR}" STREQUAL "WIX")
     "/workspaces/OdysseyEden/cmake-3.27.0/Utilities/Release/WiX/WIX.template.in"
   )
 
-  set(BUILD_QtDialog "")
+  set(BUILD_QtDialog "OFF")
 
   if(BUILD_QtDialog)
     list(APPEND CPACK_WIX_PATCH_FILE
