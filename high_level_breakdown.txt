@@ -15,7 +15,7 @@ User Interface: Create menus, HUD, and other UI components.
 Step 3: Code Implementation
 We'll start by setting up the basic game loop using pygame and then build out the various modules incrementally.
 Step 4: Procedural Generation
-Step 5: AI and Ecosystem SimulationImplement simple AI behaviors and ecosystem rules to make the game world feel alive.
+Step 5: AI and Ecosystem Simulation Implement simple AI behaviors and ecosystem rules to make the game world feel alive.
 Step 6: Genetics System
 Step 7: User Interface and Interaction
 Design the UI components and implement user interactions.

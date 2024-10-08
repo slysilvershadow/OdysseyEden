@@ -1,5 +1,6 @@
 import pyglet
-from pyglet.window import key
+from kivy.app import App
+from kivy.uix.screenmanager import ScreenManager, Screen
 
 window = pyglet.window.Window(800, 600)
 window.set_caption("Odyssey Eden")
