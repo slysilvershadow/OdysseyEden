@@ -1,4 +1,6 @@
 import pyglet
+#from pyglet.gl import *
+#gl_lib = pyglet.lib.load_library('GL')
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 
