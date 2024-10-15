@@ -1,4 +1,3 @@
-from ..utils import constants as con
 
 """Friendships: MBTI Compatibility Overview
 Best Friends:

@@ -27,6 +27,19 @@ class Config:
             }
         }
 
+        if platform == 'android':
+            self.default_config['android'] = {
+                'back_button_behavior' : 'minimize',
+                'immersive_mode' : True
+            }
+
+        elif platform == 'ios':
+            self.default_config['ios'] = {
+                'use_metal' : True
+            }
+
+        self.load_config()
+
     def load_config(self):
         if not self.store.exists('config'):
             self.store.put('config', **self.default_config)
