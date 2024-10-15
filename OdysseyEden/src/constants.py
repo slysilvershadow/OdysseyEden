@@ -64,23 +64,3 @@ MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper', 'downturned',
 RSHAPE = ['round', 'pointed']
 RSIZE = ['small', 'medium', 'large']
 
-#Temerament System
-TEMPERAMENTS = {
-    'sanguine': {'opposite': 'melancholic'},
-    'choleric': {'opposite': 'phlegmatic'},
-    'melancholic': {'opposite': 'sanguine'},
-    'phlegmatic': {'opposite': 'choleric'}
-}
-
-# MBTI System
-MBTI = {
-    'introverted': {'opposite': 'extroverted'},
-    'extroverted': {'opposite': 'introverted'},
-    'sensory': {'opposite': 'intuitive'},
-    'intuitive': {'opposite': 'sensory'},
-    'feeling': {'opposite': 'thinking'},
-    'thinking': {'opposite': 'feeling'},
-    'perceiving': {'opposite': 'judging'},
-    'judging': {'opposite': 'perceiving'}
-}
-
