@@ -1,4 +1,4 @@
-from .. import constants as con
+from ..utils import constants as con
 import random
 
 class DNA:
