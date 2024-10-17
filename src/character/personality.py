@@ -95,7 +95,7 @@ class Personalitiy:
             trait_instance.evolve(self.age_group)
             self.traits[category] = trait_instance.name
 
-    def check_synergy(self):
+    def check_synergy(self, other):
         """
         Check for synergy between the character's traits.
         
@@ -105,13 +105,3 @@ class Personalitiy:
         Returns:
         - list: A list of synergy effect descriptions.
         """
-        synergy_results = []
-        for category1 in self.traits:
-            for category2 in self.traits:
-                if category1 != category2:
-                    trait1 = Trait(self.traits[category1], self.age_group, category1)
-                    trait2 = Trait(self.traits[category2], self.age_group, category2)
-                    synergy_effect = trait1.synergy_effect(trait2)
-                    if synergy_effect:
-                        synergy_results.append(synergy_effect)
-        return synergy_results
