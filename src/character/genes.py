@@ -9,47 +9,47 @@ class DNA:
             'gender1': random.choice(con.GENDER),
             'gender2': random.choice(con.GENDER)
         }
-        self.skin = {
+        self.skin = skin or {
             'tone1': random.choice(con.TONE),
             'tone2': random.choice(con.TONE),
             'undertone1': random.choice(con.UNDERTONE),
             'undertone2': random.choice(con.UNDERTONE)
         }
-        self.height = {
+        self.height = height or {
             'value1': random.uniform(0.8, 1.2),
             'value2': random.uniform(0.8, 1.2),
             'proportion1': random.choice(con.HEIGHT),
             'proportion2': random.choice(con.HEIGHT)
         }
-        self.body = {
+        self.body = body or {
             'shape1': random.choice(con.BSHAPE),
             'shape2': random.choice(con.BSHAPE),
             'size1': random.choice(con.BSIZE),
             'size2': random.choice(con.BSIZE)
         }
-        self.hair = {
+        self.hair = hair or {
             'color1': random.choice(con.HCOLOR),
             'color2': random.choice(con.HCOLOR),
             'texture1': random.choice(con.HTEXT),
             'texture2': random.choice(con.HTEXT)
         }
-        self.eyes = {
+        self.eyes = eyes or {
             'shape1': random.choice(con.ESHAPE),
             'shape2': random.choice(con.ESHAPE),
             'color1': random.choice(con.ECOLOR),
             'color2': random.choice(con.ECOLOR)
         }
-        self.nose = {
+        self.nose = nose or {
             'profile1': random.choice(con.NPROFILE),
             'profile2': random.choice(con.NPROFILE),
             'shape1': random.choice(con.NSHAPE),
             'shape2': random.choice(con.NSHAPE)
         }
-        self.mouth = {
+        self.mouth = mouth or {
             'shape1': random.choice(con.MSHAPE),
             'shape2': random.choice(con.MSHAPE)
         }
-        self.ears = {
+        self.ears = ears or {
             'shape1': random.choice(con.RSHAPE),
             'shape2': random.choice(con.RSHAPE),
             'size1': random.choice(con.RSIZE),
