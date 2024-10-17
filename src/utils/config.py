@@ -1,8 +1,9 @@
+import json
+from typing import Any, Union
 from kivy.app import App
 from kivy.storage.jsonstore import JsonStore
 from kivy.utils import platform
 from kivy.logger import Logger
-import json
 
 class Config:
     def __init__(self):
@@ -44,7 +45,7 @@ class Config:
         if not self.store.exists('config'):
             self.store.put('config', **self.default_config)
 
-    def get_config(self, *keys):
+    def get_config(self, *keys: str) -> Any:
         config = self.store.get('config')
         for key in keys:
             if key in config:
@@ -53,7 +54,7 @@ class Config:
                 return None
         return config
     
-    def set_config(self, *keys, value):
+    def set_config(self, *keys: str, value: Any) -> None:
         config = self.store.get('config')
         temp = config
         for key in keys[:-1]:
@@ -63,5 +64,5 @@ class Config:
         temp[keys[-1]] = value
         self.store.put('config', **config)
 
-    def reset_config(self):
+    def reset_config(self) -> None:
         self.store.put('config', **self.default_config)
