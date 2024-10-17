@@ -1,36 +1,49 @@
 # skills.py
 
 class Skill:
-    def __init__(self, name, type, actions, level=0, exp=0.0, synergy=None, max_lvl=20):
+    def __init__(self, name, lvl=0, exp=0.0, max_lvl=20):
         """
         Initialize a skill object.
         
         Parameters:
         - name (str): The name of the skill.
-        - type (str): The kind of skill it is.
-        - level (int): The current level of the skill.
+        - lvl (int): The current level of the skill.
         - exp (float): The current experience points for the skill.
-        - synergy (dict): A dictionary of other skills with synergy values, affecting experience gain.
-        - max_level (int): The maximum level a skill can reach.
+        - max_lvl (int): The maximum level a skill can reach.
         """
         self.name = name
-        self.type = type
-        self.level = level
+        self.lvl = lvl
         self.exp = exp
-        self.synergy = synergy or {}
         self.max_lvl = max_lvl
 
     def add_exp(self, amount):
         """
-        Add experience points to the skill and check if the skill should level up.
+        Add experience points and check if the skill should level up.
 
         Parameters:
-        - amount (float): The amount of expirence to add.
+        - amount (float): The amount of experience to add.
 
-        Returns: 
-        - float: The update expierence points for the skill.
+        Returns:
+        - float: The updated experience points.
         """
-    
+        if self.lvl < self.max_lvl:
+            self.exp += amount
+
+            # Check if the skill can level up
+            while self.exp >= self.exp_to_next_lvl() and self.lvl < self.max_lvl:
+                self.exp -= self.exp_to_next_lvl()
+                self.lvl_up()
+
+        return self.exp
+
+    def exp_to_next_lvl(self):
+        return 100 * (self.lvl + 1)
+
+    def lvl_up(self):
+        if self.lvl < self.max_lvl:
+            self.lvl += 1
+            print(f"{self.name} leveled up to level {self.lvl}!")
+  
 """Survival Skills
 #These skills help characters meet their basic needs and thrive in their environment:
 Foraging: Collecting edible plants, fruits, and herbs from the environment.
