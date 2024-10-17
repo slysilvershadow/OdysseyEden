@@ -1,10 +1,13 @@
 # personality.py
 
 import random
+from typing import Optional, Dict
 from ..utils.constants import AGES, PERSONALITY_CATAGORIES, TRAITS, TRAIT_SYNERGIES, TRAIT_EVOLUTIONS
 
+
 class Trait:
-    def __init__(self, name, age_group, trait_group, synergy, passive_effect):
+    def __init__(self, name: str, age_group: str, trait_group: str, synergy: Dict, passive_effect: Optional[str] = None):
+
         """
         Initialize a Trait object.
         
@@ -15,13 +18,14 @@ class Trait:
         - synergy (dict): A dictionary mapping traits that synergize with this one.
         - passive_effect (str): A passive effect the trait provides, if any.
         """
-        self.name = name
-        self.age_group = age_group
-        self.trait_group = trait_group
-        self.synergy = synergy
-        self.passive_effect = passive_effect
+        self.name: str = name
+        self.age_group: str = age_group
+        self.trait_group: str = trait_group
+        self.synergy: Dict = synergy
+        self.passive_effect: Optional[str] = passive_effect
 
-    def evolve(self, current_age_group):
+
+    def evolve(self, current_age_group: str) -> None:
         """
         Evolve the current trait based on the character's current age group.
         
@@ -37,7 +41,7 @@ class Trait:
                 print(f"Evolved {self.name} to {evolution[2]}.")
                 break
 
-    def synergy_effect(self, other_trait):
+    def synergy_effect(self, other_trait: 'Trait') -> Optional[str]:
         """
         Check if this trait synergizes with another trait.
         

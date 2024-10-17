@@ -1,7 +1,10 @@
 # skills.py
 
+
+
+
 class Skill:
-    def __init__(self, name, lvl=0, exp=0.0, max_lvl=20):
+    def __init__(self, name: str, lvl: int = 0, exp: float = 0.0, max_lvl: int = 20):
         """
         Initialize a skill object.
         
@@ -11,12 +14,12 @@ class Skill:
         - exp (float): The current experience points for the skill.
         - max_lvl (int): The maximum level a skill can reach.
         """
-        self.name = name
-        self.lvl = lvl
-        self.exp = exp
-        self.max_lvl = max_lvl
+        self.name: str = name
+        self.lvl: int = lvl
+        self.exp: float = exp
+        self.max_lvl: int = max_lvl
 
-    def add_exp(self, amount):
+    def add_exp(self, amount: float) -> float:
         """
         Add experience points and check if the skill should level up.
 
@@ -36,10 +39,10 @@ class Skill:
 
         return self.exp
 
-    def exp_to_next_lvl(self):
+    def exp_to_next_lvl(self) -> int:
         return 100 * (self.lvl + 1)
 
-    def lvl_up(self):
+    def lvl_up(self) -> None:
         if self.lvl < self.max_lvl:
             self.lvl += 1
             print(f"{self.name} leveled up to level {self.lvl}!")
