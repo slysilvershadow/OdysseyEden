@@ -1,7 +1,9 @@
 # actions.py
+from typing import Dict, Optional
+
 
 class Action:
-    def __init__(self, name, skill_impacts=None):
+    def __init__(self, name: str, skill_impacts: Optional[Dict[str, int]] = None):
         """
         Initialize an action object.
 
@@ -9,10 +11,10 @@ class Action:
         - name (str): The name of the action.
         - skill_impacts (dict): A dictionary mapping skill names to experience points.
         """
-        self.name = name
-        self.skill_impacts = skill_impacts or {}
+        self.name: str = name
+        self.skill_impacts: Dict[str, int] = skill_impacts or {}
 
-    def apply(self, character_skills):
+    def apply(self, character_skills: Dict[str, 'Skill']) -> None:
         """
         Apply the action's impact to the character's skills.
 
@@ -24,4 +26,4 @@ class Action:
                 character_skills[skill_name].add_exp(exp)
                 print(f"{self.name} added {exp} experience to {skill_name}.")
             else:
-                print(f"Skill {skill_name} not found in character skills.")
+                print(f"Skill {skill_name} not found in character skills.")    
