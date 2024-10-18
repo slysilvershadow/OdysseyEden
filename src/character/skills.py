@@ -1,15 +1,13 @@
 # skills.py
 
-
-
-
 class Skill:
-    def __init__(self, name: str, lvl: int = 0, exp: float = 0.0, max_lvl: int = 20):
+    def __init__(self, name: str, group: str, lvl: int = 0, exp: float = 0.0, max_lvl: int = 20):
         """
         Initialize a skill object.
         
         Parameters:
         - name (str): The name of the skill.
+        - group (str): The catagory that the skill belongs to.
         - lvl (int): The current level of the skill.
         - exp (float): The current experience points for the skill.
         - max_lvl (int): The maximum level a skill can reach.
@@ -46,7 +44,8 @@ class Skill:
         if self.lvl < self.max_lvl:
             self.lvl += 1
             print(f"{self.name} leveled up to level {self.lvl}!")
-  
+
+
 """Survival Skills
 #These skills help characters meet their basic needs and thrive in their environment:
 Foraging: Collecting edible plants, fruits, and herbs from the environment.
