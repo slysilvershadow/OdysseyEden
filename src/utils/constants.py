@@ -79,17 +79,17 @@ AGES = {
 
 TRAITS = {
     'temperament': {
-        'postitive': ['easy-going', 'adaptable', 'content', 'cheerful', 'calm'],
+        'positive': ['easy-going', 'adaptable', 'content', 'cheerful', 'calm'],
         'neutral': ['active', 'regular', 'slow-to-warm-up', 'moderate', 'observant'],
         'negative': ['fussy', 'irritable', 'unpredictable', 'restless', 'overactive']
     }, 
     'socialization': {
-        'postitive': ['sociable', 'playful', 'affectionate', 'friendly', 'engaging'],
+        'positive': ['sociable', 'playful', 'affectionate', 'friendly', 'engaging'],
         'neutral': ['observant', 'independent', 'cautious', 'curious', 'mellow'],
         'negative': ['clingy', 'aggressive', 'withdrawn', 'hyperactive', 'impulsive']
     },
     'emotional': {
-        'postitive': ['cheerful', 'calm', 'optimistic', 'joyful', 'hopeful'],
+        'positive': ['cheerful', 'calm', 'optimistic', 'joyful', 'hopeful'],
         'neutral': ['sensitive', 'passionate', 'reflective', 'balanced', 'realistic'],
         'negative': ['moody', 'anxious', 'pessimistic', 'irritable', 'doubtful']
     },
