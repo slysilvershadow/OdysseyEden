@@ -130,14 +130,14 @@ TRAITS = {
     }
 }
 
-CATEGORIES_PER_AGE = {
-    AGES['infant']: [TRAITS['temperament']],
-    AGES['sprout']: [TRAITS['temperament'], TRAITS['socialization']],
-    AGES['youth']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['cognition']],
-    AGES['adolescent']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['cognition'], TRAITS['identity']],
-    AGES['prime']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['ambition'], TRAITS['morals']],
-    AGES['mature']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['ambition'], TRAITS['morals'], TRAITS['perspective']],
-    AGES['sage']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['morals'], TRAITS['perspective'], TRAITS['legacy']]
+CATAGORIES_PER_AGE = {
+    AGES[0]: [TRAITS[0]],
+    AGES[1]: [TRAITS[0], TRAITS[1]],
+    AGES[2]: [TRAITS[2], TRAITS[3], TRAITS[4]],
+    AGES[3]: [TRAITS[2], TRAITS[3], TRAITS[4], TRAITS[5]],
+    AGES[4]: [TRAITS[2], TRAITS[3], TRAITS[6], TRAITS[7]],
+    AGES[5]: [TRAITS[2], TRAITS[3], TRAITS[6], TRAITS[7], TRAITS[8]],
+    AGES[6]: [TRAITS[2], TRAITS[3], TRAITS[7], TRAITS[8], TRAITS[9]]
 }
 
 TRAIT_EVOLUTIONS = [
