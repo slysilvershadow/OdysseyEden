@@ -1,4 +1,4 @@
-# constants.py
+op qQ# constants.py
 HOUR_LEN = 60
 DAY_LEN = 24
 WEEK_LEN = 10
@@ -252,11 +252,11 @@ stats = {
         'perception' : int, 
         'willpower' : int},
     'advanced' : {
-        'endurance'  : stats[0][0] + stats[0][1], 
-        'prowess' : stats[0][1] + stats[0][2], 
-        'finess' : stats[0][2] + stats[0][3], 
-        'conviction' : stats[0][3] + stats[0][4], 
-        'vitality' : stats[0][4] + stats[0][0]}
+        'endurance'  : int, 
+        'prowess' : int, 
+        'finess' : int, 
+        'conviction' : int, 
+        'vitality' : int}
 }
 skills = {
     'survival' : ['foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry'], 
@@ -267,5 +267,6 @@ skills = {
     'healing' : ['herbalisim', 'first aid', 'surgery', 'midwifery', 'spiritual healing'],
     'mental' : ['meditation', 'philosophy', 'spiritual leadership'],
     'exploration' : ['navigstion', 'cartography', 'swimming', 'climbing'],
-    'domestic' : ['cleaning', 'child rearing', 'clothing maitenince']
+    'domestic' : ['cleaning', 'child rearing', 'clothing maitenince'],
+    'magic' : ['elemental', 'divination', 'alchemy', 'enchanting']
 }
