@@ -84,7 +84,7 @@ Sculpting: Crafting statues or other items from wood, stone, or clay to express 
 Music: Playing instruments or singing to boost morale or tell stories.
 5. Social & Communication Skills
 These skills are vital for building relationships within the tribe and beyond:
-
+   
 Bartering: Negotiating trades with other tribes or within the community.
 Leadership: Inspiring others, making decisions for the tribe, and managing group morale.
 Teaching: Passing down knowledge to younger generations, allowing skills to propagate within the tribe.
@@ -106,7 +106,7 @@ Philosophy: Understanding and debating the world’s truths, contributing to the
 Spiritual Leadership: Guiding the tribe through religious or spiritual rituals, strengthening cultural identity.
 8. Exploration & Navigation Skills
 For navigating and understanding the broader game world:
-
+       
 Navigation: Finding paths through wilderness or biomes, potentially using stars or natural markers.
 Cartography: Creating maps of explored areas for future reference and use by the tribe.
 Swimming: Safely crossing bodies of water, either for exploration or survival.

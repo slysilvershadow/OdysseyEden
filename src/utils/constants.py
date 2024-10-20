@@ -244,7 +244,28 @@ TRAIT_SYNERGIES = [
     (('authentic', 'principled'), 'promotes integrity and trustworthiness'),
 ]
 
-skills = {
-    'food'
+stats = {
+    'core' : {
+        'stamina' : int, 
+        'strength' : int, 
+        'dexterity' : int, 
+        'perception' : int, 
+        'willpower' : int},
+    'advanced' : {
+        'endurance'  : stats[0][0] + stats[0][1], 
+        'prowess' : stats[0][1] + stats[0][2], 
+        'finess' : stats[0][2] + stats[0][3], 
+        'conviction' : stats[0][3] + stats[0][4], 
+        'vitality' : stats[0][4] + stats[0][0]}
 }
-print(TRAITS[0[0[0]]])
+skills = {
+    'survival' : ['foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry'], 
+    'combat' : ['melee', 'archery', 'defense', 'tactics', 'martial arts'],
+    'crafting' : ['woodworking', 'stoneworking', 'metalworking', 'textile crafting', 'pottery', 'building', 'leatherworking'],
+    'artisan' :  ['painting', 'writing', 'scu;pting', 'music'],
+    'communication' : ['bartering', 'leadership', 'teaching', 'diplomacy','persuasion'],
+    'healing' : ['herbalisim', 'first aid', 'surgery', 'midwifery', 'spiritual healing'],
+    'mental' : ['meditation', 'philosophy', 'spiritual leadership'],
+    'exploration' : ['navigstion', 'cartography', 'swimming', 'climbing'],
+    'domestic' : ['cleaning', 'child rearing', 'clothing maitenince']
+}
