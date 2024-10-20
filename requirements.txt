@@ -1,8 +1,0 @@
-entyty=0.0.54
-gridengine_framework=0.91.9
-Kivy=2.3.0
-namemaker=1.2
-pyglet=2.0.17
-Pygments=2.18.0
-pymunk=6.8.1
-Twisted=24.7.0

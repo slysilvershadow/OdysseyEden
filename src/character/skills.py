@@ -45,6 +45,8 @@ class Skill:
             self.lvl += 1
             print(f"{self.name} leveled up to level {self.lvl}!")
 
+    
+
 
 """Survival Skills
 #These skills help characters meet their basic needs and thrive in their environment:
