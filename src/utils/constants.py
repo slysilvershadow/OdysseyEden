@@ -10,8 +10,10 @@ AFTERNOON = [12, 13, 14, 15, 16]
 EVENING = [17, 18, 19, 20, 21, 22]
 NIGHT = [23, 24, 1, 2, 3, 4, 5]
 
-MONTH_NAMES = ['Brigide', 'Imbolka', 'Floralis', 'Lithara', 'Heliax', 'Aestium', 'Mabonel', 'Ceresio', 'Yulith', 'Hibernis']
-DAY_NAMES = ['Restony', 'Serement', 'Chronesis', 'Tempetude', 'Solament', 'Helioris', 'Duratonis', 'Resporal', 'Sabbathal', 'Noctitude']
+MONTH_NAMES = ['Brigide', 'Imbolka', 'Floralis', 'Lithara',
+               'Heliax', 'Aestium', 'Mabonel', 'Ceresio', 'Yulith', 'Hibernis']
+DAY_NAMES = ['Restony', 'Serement', 'Chronesis', 'Tempetude', 'Solament',
+             'Helioris', 'Duratonis', 'Resporal', 'Sabbathal', 'Noctitude']
 
 # Character Needs
 MAX_HUNGER = 100
@@ -34,7 +36,7 @@ MIN_COMFORT = 0
 MIN_SAFETY = 0
 MIN_HEALTH = 0
 
-# Decay rates
+# Default Decay rates
 HUNGER_DECAY = 2  # 2 points every in-game hour
 THIRST_DECAY = 3  # 3 points every in-game hour
 ENERGY_DECAY = 1  # 1 point every in-game hour
@@ -59,12 +61,12 @@ ESHAPE = ['round', 'almond', 'upturned', 'downturned', 'hooded']
 ECOLOR = ['brown', 'hazel', 'green', 'blue', 'grey']
 NPROFILE = ['small', 'medium', 'tall']
 NSHAPE = ['refined', 'hero', 'soft', 'perky', 'dainty', 'strong', 'bulb']
-MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper', 'downturned', 'bowshaped', 'full', 'heartshaped']
+MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper',
+          'downturned', 'bowshaped', 'full', 'heartshaped']
 RSHAPE = ['round', 'pointed']
 RSIZE = ['small', 'medium', 'large']
 
-
-RESPONSES = ['recpetive', 'motive', 'apprehensive', 'refusal']
+RESPONSES = ['receptive', 'motive', 'apprehensive', 'refusal']
 
 AGES = {
     'infant': (0, 2),
@@ -76,49 +78,262 @@ AGES = {
     'sage': (60, 120)
 }
 
-BASE_STATS = {
-            "Stamina": 10,
-            "Strength": 10,
-            "Dexterity": 10,
-            "Perception": 10,
-            "Willpower": 10
+TRAITS = {
+    'temperament': {
+        'positive': [
+            'easy-going',
+            'adaptable',
+            'content',
+            'cheerful',
+            'calm'
+        ],
+        'neutral': [
+            'active',
+            'regular',
+            'slow-to-warm-up',
+            'moderate',
+            'observant'
+        ],
+        'negative': [
+            'fussy',
+            'irritable',
+            'unpredictable',
+            'restless',
+            'overactive'
+        ]
+    },
+    'socialization': {
+        'positive': [
+            'sociable',
+            'playful',
+            'affectionate',
+            'friendly',
+            'outgoing'
+        ],
+        'neutral': [
+            'observant',
+            'independent',
+            'cautious',
+            'curious',
+            'mellow'
+        ],
+        'negative': [
+            'clingy',
+            'irritable',
+            'withdrawn',
+            'hyperactive',
+            'impulsive'
+        ]
+    },
+    'emotional': {
+        'positive': [
+            'cheerful',
+            'passionate',
+            'optimistic',
+            'joyful',
+            'hopeful'
+        ],
+        'neutral': [
+            'sensitive',
+            'calm',
+            'reflective',
+            'balanced',
+            'realistic'
+        ],
+        'negative': [
+            'moody',
+            'anxious',
+            'gloomy',
+            'aggressive',
+            'doubtful'
+        ]
+    },
+    'interaction': {
+        'positive': [
+            'cooperative',
+            'empathetic',
+            'supportive',
+            'generous',
+            'trustworthy'
+        ],
+        'neutral': [
+            'reserved',
+            'independent',
+            'adaptable',
+            'neutral',
+            'pragmatic'
+        ],
+        'negative': [
+            'shy',
+            'confrontational',
+            'manipulative',
+            'aloof',
+            'dismissive'
+        ]
+    },
+    'cognition': {
+        'positive': [
+            'curious',
+            'diligent',
+            'creative',
+            'inquisitive',
+            'motivated'
+        ],
+        'neutral': [
+            'practical',
+            'analytical',
+            'intuitive',
+            'theoretical',
+            'exploratory'
+        ],
+        'negative': [
+            'distracted',
+            'stubborn',
+            'uncritical',
+            'complacent',
+            'disinterested'
+        ]
+    },
+    'identity': {
+        'positive': [
+            'confident',
+            'principled',
+            'open-minded',
+            'self-aware',
+            'authentic'
+        ],
+        'neutral': [
+            'questioning',
+            'experimental',
+            'idealistic',
+            'reflective',
+            'curious'
+        ],
+        'negative': [
+            'insecure',
+            'conformist',
+            'rebellious',
+            'conflicted',
+            'doubtful'
+        ]
+    },
+    'ambition': {
+        'positive': [
+            'ambitious',
+            'dedicated',
+            'innovative',
+            'goal-oriented',
+            'driven'
+        ],
+        'neutral': [
+            'flexible',
+            'specialized',
+            'risk-taking',
+            'pragmatic',
+            'adaptable'
+        ],
+        'negative': [
+            'unmotivated',
+            'workaholic',
+            'indecisive',
+            'complacent',
+            'disengaged'
+        ]
+    },
+    'morals': {
+        'positive': [
+            'honest',
+            'compassionate',
+            'resilient',
+            'fair-minded',
+            'generous'
+        ],
+        'neutral': [
+            'traditional',
+            'pragmatic',
+            'individualistic',
+            'balanced',
+            'neutral'
+        ],
+        'negative': [
+            'materialistic',
+            'judgmental',
+            'hedonistic',
+            'selfish',
+            'cynical'
+        ]
+    },
+    'perspective': {
+        'positive': [
+            'wise',
+            'content',
+            'grateful',
+            'optimistic',
+            'hopeful'
+        ],
+        'neutral': [
+            'philosophical',
+            'nostalgic',
+            'accepting',
+            'realistic',
+            'pragmatic'
+        ],
+        'negative': [
+            'cynical',
+            'regretful',
+            'bitter',
+            'despondent',
+            'resentful'
+        ]
+    },
+    'legacy': {
+        'positive': [
+            'mentoring',
+            'philanthropic',
+            'inspiring',
+            'guiding',
+            'visionary'
+        ],
+        'neutral': [
+            'reflective',
+            'private',
+            'traditional',
+            'conservative',
+            'practical'
+        ],
+        'negative': [
+            'disengaged',
+            'controlling',
+            'resentful',
+            'manipulative',
+            'detached'
+        ]
+    }
 }
 
-SKILLS = [
-    'foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry', 
-    'melee', 'archery', 'defense', 'tactics', 'martial arts', 
-    'woodworking', 'stoneworking', 'metalworking', 'textile crafting', 'pottery', 'building', 'leatherworking',
-    'painting', 'writing', 'sculpting', 'music',
-    'bartering', 'leadership', 'teaching', 'diplomacy','persuasion',
-    'herbalism', 'first aid', 'surgery', 'midwifery', 'spiritual healing',
-    'meditation', 'philosophy', 'spiritual leadership',
-    'navigation', 'cartography', 'swimming', 'climbing',
-    'cleaning', 'child rearing', 'clothing maintenance',
-    'elemental', 'divination', 'alchemy', 'enchanting'
-]
-
-SKILLS_GROUPS = {
-    'survival' : [SKILLS[0], SKILLS[1], SKILLS[2], SKILLS[3], SKILLS[4], SKILLS[5], SKILLS[6], SKILLS[7], SKILLS[8]], 
-    'combat' : [SKILLS[9], SKILLS[10], SKILLS[11], SKILLS[12], SKILLS[13]],
-    'crafting' : [SKILLS[14], SKILLS[15], SKILLS[16], SKILLS[17], SKILLS[18], SKILLS[19], SKILLS[20]],
-    'artisan' :  [SKILLS[21], SKILLS[22], SKILLS[23], SKILLS[24]],
-    'communication' : [SKILLS[25], SKILLS[26], SKILLS[27], SKILLS[28], SKILLS[29]],
-    'healing' : [SKILLS[30], SKILLS[31], SKILLS[32], SKILLS[33], SKILLS[34]],
-    'mental' : [SKILLS[35], SKILLS[36], SKILLS[37]],
-    'exploration' : [SKILLS[38], SKILLS[39], SKILLS[40], SKILLS[41]],
-    'domestic' : [SKILLS[42], SKILLS[43], SKILLS[44]],
-    'magic' : [SKILLS[45], SKILLS[46], SKILLS[47], SKILLS[48]]
+stats = {
+    'core': {
+        'stamina': int,
+        'strength': int,
+        'dexterity': int,
+        'perception': int,
+        'willpower': int},
+    'advanced': {
+        'endurance': int,
+        'prowess': int,
+        'finess': int,
+        'conviction': int,
+        'vitality': int}
 }
-
-SKILL_STAT_RELATIONS = {
-    'survival': [BASE_STATS['Stamina'], BASE_STATS['Strength']],
-    'combat': [BASE_STATS['Strength'], BASE_STATS['Dexterity']],
-    'crafting': [BASE_STATS['Strength'], BASE_STATS['Perception']],
-    'artisan': [BASE_STATS['Stamina'], BASE_STATS['Dexterity']],
-    'communication': [BASE_STATS['Perception'], BASE_STATS['Willpower']],
-    'healing': [BASE_STATS['Stamina'], BASE_STATS['Perception']],
-    'mental': [BASE_STATS['Willpower'], BASE_STATS['Perception']],
-    'exploration': [BASE_STATS['Dexterity'], BASE_STATS['Willpower']],
-    'domestic': [BASE_STATS['Stamina'], BASE_STATS['Willpower']],
-    'magic': [BASE_STATS['Dexterity'], BASE_STATS['Willpower']],
+skills = {
+    'survival': ['foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry'],
+    'combat': ['melee', 'archery', 'defense', 'tactics', 'martial arts'],
+    'crafting': ['woodworking', 'stoneworking', 'metalworking', 'textile crafting', 'pottery', 'building', 'leatherworking'],
+    'artisan':  ['painting', 'writing', 'sculpting', 'music'],
+    'communication': ['bartering', 'leadership', 'teaching', 'diplomacy', 'persuasion'],
+    'healing': ['herbalisim', 'first aid', 'surgery', 'midwifery', 'spiritual healing'],
+    'mental': ['meditation', 'philosophy', 'spiritual leadership'],
+    'exploration': ['navigation', 'cartography', 'swimming', 'climbing'],
+    'domestic': ['cleaning', 'child rearing', 'clothing maintenance'],
+    'magic': ['elemental', 'divination', 'alchemy', 'enchanting']
 }

@@ -1,6 +1,7 @@
 from ..utils import constants as con
 import random
 
+
 class DNA:
     def __init__(self, gender=None, skin=None, height=None, body=None, hair=None, eyes=None, nose=None, mouth=None, ears=None):
         self.gender = gender or {
@@ -58,7 +59,8 @@ class DNA:
 
     def __repr__(self):
         return (f"DNA(gender={self.gender}, skin={self.skin}, height={self.height}, "
-                f"body={self.body}, hair={self.hair}, eyes={self.eyes}, nose={self.nose}, "
+                f"body={self.body}, hair={self.hair}, eyes={
+                    self.eyes}, nose={self.nose}, "
                 f"mouth={self.mouth}, ears={self.ears})")
 
     def __add__(self, other):
