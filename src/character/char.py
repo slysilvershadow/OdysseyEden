@@ -1,6 +1,7 @@
 import pyglet
 import random
 from src.utils import constants as con
+from src.utils import constants as con
 import genes
 import needs
 
