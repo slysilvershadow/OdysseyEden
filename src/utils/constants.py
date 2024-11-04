@@ -1,4 +1,8 @@
 # constants.py
+WORLD_WIDTH = 100
+WORLD_HEIGHT = 100
+
+BIOMES = ['forest', 'plains', 'ocean', 'desert', 'moutains']
 HOUR_LEN = 60
 DAY_LEN = 24
 WEEK_LEN = 10
@@ -61,8 +65,7 @@ ESHAPE = ['round', 'almond', 'upturned', 'downturned', 'hooded']
 ECOLOR = ['brown', 'hazel', 'green', 'blue', 'grey']
 NPROFILE = ['small', 'medium', 'tall']
 NSHAPE = ['refined', 'hero', 'soft', 'perky', 'dainty', 'strong', 'bulb']
-MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper',
-          'downturned', 'bowshaped', 'full', 'heartshaped']
+MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper', 'downturned', 'bowshaped', 'full', 'heartshaped']
 RSHAPE = ['round', 'pointed']
 RSIZE = ['small', 'medium', 'large']
 

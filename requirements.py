@@ -1,2 +1,3 @@
-import pipreqs
-pipreqs /workspaces/OdysseyEden/src
+pygame
+noise
+esper

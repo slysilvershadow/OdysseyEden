@@ -6,8 +6,22 @@ import needs
 
 class Character(pyglet.sprite.Sprite):
     def __init__(self, **kwargs):
-        pass
-      
+        self.mom = mom or None
+		self.dad = dad or None
+		self.dna = createDNA(self, mom, dad)
+		aelf.age = age or randAge(self)
+		self.traits = traits or randTraits(self)
+		self.stats = stats or randStats(self)
+	
+	def randAge(self):
+		pass
+		
+    def randTraits(self):
+		pass
+		
+	def randStats(self):
+		pass
+		
     def improve_related_stats(self, skill: Skill, levels_gained: int):
 
         if skill.group in con.SKILL_STAT_RELATIONS:
