@@ -10,8 +10,10 @@ AFTERNOON = [12, 13, 14, 15, 16]
 EVENING = [17, 18, 19, 20, 21, 22]
 NIGHT = [23, 24, 1, 2, 3, 4, 5]
 
-MONTH_NAMES = ['Brigide', 'Imbolka', 'Floralis', 'Lithara', 'Heliax', 'Aestium', 'Mabonel', 'Ceresio', 'Yulith', 'Hibernis']
-DAY_NAMES = ['Restony', 'Serement', 'Chronesis', 'Tempetude', 'Solament', 'Helioris', 'Duratonis', 'Resporal', 'Sabbathal', 'Noctitude']
+MONTH_NAMES = ['Brigide', 'Imbolka', 'Floralis', 'Lithara',
+               'Heliax', 'Aestium', 'Mabonel', 'Ceresio', 'Yulith', 'Hibernis']
+DAY_NAMES = ['Restony', 'Serement', 'Chronesis', 'Tempetude', 'Solament',
+             'Helioris', 'Duratonis', 'Resporal', 'Sabbathal', 'Noctitude']
 
 # Character Needs
 MAX_HUNGER = 100
@@ -34,7 +36,7 @@ MIN_COMFORT = 0
 MIN_SAFETY = 0
 MIN_HEALTH = 0
 
-# Decay rates
+# Default Decay rates
 HUNGER_DECAY = 2  # 2 points every in-game hour
 THIRST_DECAY = 3  # 3 points every in-game hour
 ENERGY_DECAY = 1  # 1 point every in-game hour
@@ -63,8 +65,7 @@ MSHAPE = ['thin', 'round', 'wide', 'fuller lower', 'fuller upper', 'downturned',
 RSHAPE = ['round', 'pointed']
 RSIZE = ['small', 'medium', 'large']
 
-
-RESPONSES = ['recpetive', 'motive', 'apprehensive', 'refusal']
+RESPONSES = ['receptive', 'motive', 'apprehensive', 'refusal']
 
 AGES = {
     'infant': (0, 2),

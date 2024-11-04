@@ -1,124 +1,211 @@
-from src.utils import constants as con
-TRAITS = {
-    '0temperament': {
-        '0positive':('0easy-going', '1adaptable', '2content', '3cheerful', '4calm'),
-        '1neutral': ('0active', '1regular', '2slow-to-warm-up', '3moderate', '4observant'),
-        '2negative':('0fussy', '1irritable', '2unpredictable', '3restless', '4overactive')
-    }, 
-    '1socialization': {
-        '0positive':('0sociable', '1playful', '2affectionate', '3friendly', '4engaging'),
-        '1neutral': ('0observant', '1independent', '2cautious', '3curious', '4mellow'),
-        '2negative':('0clingy', '1aggressive', '2withdrawn', '3hyperactive', '4impulsive')
-    },
-    '2emotional': {
-        '0positive':('0cheerful', '1calm', '2optimistic', '3joyful', '4hopeful'),
-        '1neutral': ('0sensitive', '1passionate', '2reflective', '3balanced', '4realistic'),
-        '2negative':('0moody', '1anxious', '2pessimistic', '3irritable', '4doubtful')
-    },
-    '3interaction': {
-        '0positive':('0friendly', '11cooperative', '2empathetic', '3supportive', '4generous'),
-        '1neutral': ('0reserved', '11independent', '2adaptable', '3neutral', '4pragmatic'),
-        '2negative':('0shy', '11confrontational', '2manipulative', '3aloof', '4dismissive')
-    },
-    '4cognition': {
-        '0positive':('0curious', '11diligent', '2creative', '3inquisitive', '4motivated'),
-        '1neutral': ('0practical', '11analytical', '2intuitive', '3theoretical', '4exploratory'),
-        '2negative':('0distracted', '11stubborn', '2uncritical', '3complacent', '4disinterested')
-    },
-    '5identity': {
-        '0positive':('0confident', '1principled', '2open-minded', '3self-aware', '4authentic'),
-        '1neutral': ('0questioning', '1experimental', '2idealistic', '3reflective', '4curious'),
-        '2negative':('0insecure', '1conformist', '2rebellious', '3conflicted', '4doubtful')
-    },
-    '6ambition': {
-        '0positive':('0ambitious', '1dedicated', '2innovative', '3goal-oriented', '4driven'),
-        '1neutral': ('0flexible', '1specialized', '2risk-taking', '3pragmatic', '4adaptable'),
-        '2negative':('0unmotivated', '1workaholic', '2indecisive', '3complacent', '4disengaged')
-    },
-    '7morals': {
-        '0positive':('0honest', '1compassionate', '2resilient', '3fair-minded', '4generous'),
-        '1neutral': ('0traditional', '1pragmatic', '2individualistic', '3balanced', '4neutral'),
-        '2negative':('0materialistic', '1judgmental', '2hedonistic', ' 3selfish', '4cynical')
-    },
-    '8perspective': {
-        '0positive':('0wise', '1content', '2grateful', '3optimistic', '4hopeful'),
-        '1neutral': ('0philosophical', '1nostalgic', '2accepting', '3realistic', '4pragmatic'),
-        '2negative':('0cynical', '1regretful', '2bitter', '3pessimistic', '4resentful')
-    },
-    '9legacy': {
-        '0positive':('0mentoring', '1philanthropic', '2inspiring', '3guiding', '4visionary'),
-        '1neutral': ('0reflective', '1private', '2traditional', '3conservative', '4practical'),
-        '2negative':('0disengaged', '1controlling', '2resentful', '3manipulative', '4detached')
-    }
-}
+from ..utils import constants
+from constants import AGES, TRAITS
 
-CATAGORIES_PER_AGE = {
-    con.AGES[0]: (TRAITS[0]),
-    con.AGES[1]: (TRAITS[0], TRAITS[1]),
-    con.AGES[2]: (TRAITS[2], TRAITS[3], TRAITS[4]),
-    con.AGES[3]: (TRAITS[2], TRAITS[3], TRAITS[4], TRAITS[5]),
-    con.AGES[4]: (TRAITS[2], TRAITS[3], TRAITS[6], TRAITS[7]),
-    con.AGES[5]: (TRAITS[2], TRAITS[3], TRAITS[6], TRAITS[7], TRAITS[8]),
-    con.AGES[6]: (TRAITS[2], TRAITS[3], TRAITS[7], TRAITS[8], TRAITS[9])
+CATEGORIES_PER_AGE = {
+    AGES['infant']: TRAITS['temperament'],
+    AGES['sprout']: [TRAITS['temperament'], TRAITS['socialization']],
+    AGES['youth']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['cognition']],
+    AGES['adolescent']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['cognition'], TRAITS['identity']],
+    AGES['prime']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['ambition'], TRAITS['morals']],
+    AGES['mature']: [TRAITS['emotional'], TRAITS['interaction'], TRAITS['ambition'], TRAITS['morals'], TRAITS['perspective']],
+    AGES['sage']: [TRAITS['emotional'], TRAITS['interaction'],
+                   TRAITS['morals'], TRAITS['perspective'], TRAITS['legacy']]
 }
 
 TRAIT_EVOLUTIONS = [
-    (TRAITS[0][0][0], TRAITS[0][0][1], AGES[1]),
-    (TRAITS[1][0][0], TRAITS[1][0][1], AGES[2]),
-    (TRAITS[2][0][0], TRAITS[2][0][2], AGES[3]),
-    (TRAITS[2][0][1], TRAITS[2][0][2], AGES[3]),
-    (TRAITS[2][1][1], TRAITS[2][1][2], AGES[3]),
-    (TRAITS[2][2][0], TRAITS[2][1][1], AGES[3]),
-    (TRAITS[2][2][1], TRAITS[2][1][0], AGES[3]),
-    (TRAITS[2][2][2], TRAITS[8][2][0], AGES[3]),
-    (TRAITS[3][0][0], TRAITS[3][0][2], AGES[3]),
-    (TRAITS[3][2][0], TRAITS[3][1][0], AGES[3]),
-    (TRAITS[4][0][0], TRAITS[4][0][1], AGES[3]),
-    (TRAITS[4][0][1], TRAITS[4][1][1], AGES[4]),
-    (TRAITS[4][2][0], TRAITS[4][2][4], AGES[3]),
-    (TRAITS[4][2][1], TRAITS[4][2][2], AGES[3]),
-    (TRAITS[4][2][2], TRAITS[4][2][3], AGES[3]),
-    (TRAITS[4][0][1], TRAITS[6][0][1], AGES[4]),
-    (TRAITS[4][0][2], TRAITS[6][0][2], AGES[4]),
-    (TRAITS[4][1][0], TRAITS[4][1][1], AGES[4]),
-    (TRAITS[5][0][0], TRAITS[5][0][1], AGES[4]),
-    (TRAITS[2][0][2], TRAITS[7][0][2], AGES[5]),
-    (TRAITS[2][1][0], TRAITS[8][1][0], AGES[5]),
-    (TRAITS[2][1][1], TRAITS[2][1][2], AGES[5]),
-    (TRAITS[3][0][2], TRAITS[7][0][0], AGES[5]),
-    (TRAITS[3][1][0], TRAITS[5][1][1], AGES[5]),
-    (TRAITS[3][2][1], TRAITS[3][2][4], AGES[5]),
-    (TRAITS[3][2][3], TRAITS[7][2][1], AGES[5]),
-    (TRAITS[5][0][1], TRAITS[5][0][2], AGES[5]),
-    (TRAITS[5][2][0], TRAITS[5][2][1], AGES[5]),
-    (TRAITS[5][2][1], TRAITS[8][1][2], AGES[5]),
-    (TRAITS[5][2][2], TRAITS[5][1][2], AGES[5]),
-    (TRAITS[6][0][0], TRAITS[6][0][1], AGES[5]),
-    (TRAITS[6][0][1], TRAITS[6][0][0], AGES[5]),
-    (TRAITS[6][0][2], TRAITS[9][0][2], AGES[5]),
-    (TRAITS[6][2][1], TRAITS[6][2][0], AGES[5]),
-    (TRAITS[6][2][2], TRAITS[6][2][3], AGES[5]),
-    (TRAITS[7][2][0], TRAITS[7][2][4], AGES[5]),
-    (TRAITS[7][2][1], TRAITS[7][2][0], AGES[5]),
-    (TRAITS[7][2][2], TRAITS[7][2][3], AGES[5]),
-    (TRAITS[8][1][0], TRAITS[8][1][2], AGES[5]),
-    (TRAITS[8][2][0], TRAITS[8][2][1], AGES[5]),
-    (TRAITS[3][1][1], TRAITS[3][1][0], AGES[6]),
-    (TRAITS[3][2][1], TRAITS[3][2][3], AGES[6]),
-    (TRAITS[3][2][4], TRAITS[3][2][2], AGES[6]),
-    (TRAITS[7][0][0], TRAITS[7][0][1], AGES[6]),
-    (TRAITS[8][1][0], TRAITS[8][1][1], AGES[6]),
-    (TRAITS[8][1][2], TRAITS[8][1][0], AGES[6]),
-    (TRAITS[8][2][0], TRAITS[8][2][2], AGES[6]),
-    (TRAITS[8][2][1], TRAITS[8][2][3], AGES[6]),
-    (TRAITS[8][2][2], TRAITS[8][2][1], AGES[6]),
-    (TRAITS[8][2][3], TRAITS[8][2][0], AGES[6]),
-    (TRAITS[9][0][0], TRAITS[9][0][1], AGES[6]),
-    (TRAITS[9][0][1], TRAITS[9][0][2], AGES[6]),
-    (TRAITS[9][0][2], TRAITS[9][0][0], AGES[6]),
+    # Temperament to Emotional
+    (TRAITS['temperament']['positive'][0],
+     TRAITS['emotional']['positive'][0], AGES['youth']),  #
+    (TRAITS['temperament']['positive'][1],
+     TRAITS['emotional']['positive'][1], AGES['youth']),  #
+    (TRAITS['temperament']['positive'][2],
+     TRAITS['emotional']['positive'][2], AGES['youth']),  #
+    (TRAITS['temperament']['positive'][3],
+     TRAITS['emotional']['positive'][3], AGES['youth']),  #
+    (TRAITS['temperament']['positive'][4],
+     TRAITS['emotional']['positive'][4], AGES['youth']),  #
+    (TRAITS['temperament']['neutral'][0],
+     TRAITS['emotional']['neutral'][0], AGES['youth']),    #
+    (TRAITS['temperament']['neutral'][1],
+     TRAITS['emotional']['neutral'][1], AGES['youth']),    #
+    (TRAITS['temperament']['neutral'][2],
+     TRAITS['emotional']['neutral'][2], AGES['youth']),    #
+    (TRAITS['temperament']['neutral'][3],
+     TRAITS['emotional']['neutral'][3], AGES['youth']),    #
+    (TRAITS['temperament']['neutral'][4],
+     TRAITS['emotional']['neutral'][4], AGES['youth']),    #
+    (TRAITS['temperament']['negative'][0],
+     TRAITS['emotional']['negative'][0], AGES['youth']),  #
+    (TRAITS['temperament']['negative'][1],
+     TRAITS['emotional']['negative'][1], AGES['youth']),  #
+    (TRAITS['temperament']['negative'][2],
+     TRAITS['emotional']['negative'][2], AGES['youth']),  #
+    (TRAITS['temperament']['negative'][3],
+     TRAITS['emotional']['negative'][3], AGES['youth']),  #
+    (TRAITS['temperament']['negative'][4],
+     TRAITS['emotional']['negative'][4], AGES['youth']),  #
+
+    # Socialization to Interaction
+    (TRAITS['socialization']['positive'][0],
+     TRAITS['interaction']['positive'][0], AGES['youth']),  #
+    (TRAITS['socialization']['positive'][1],
+     TRAITS['interaction']['positive'][1], AGES['youth']),  #
+    (TRAITS['socialization']['positive'][2],
+     TRAITS['interaction']['positive'][2], AGES['youth']),  #
+    (TRAITS['socialization']['positive'][3],
+     TRAITS['interaction']['positive'][3], AGES['youth']),  #
+    (TRAITS['socialization']['positive'][4],
+     TRAITS['interaction']['positive'][4], AGES['youth']),  #
+    (TRAITS['socialization']['neutral'][0],
+     TRAITS['interaction']['neutral'][0], AGES['youth']),    #
+    (TRAITS['socialization']['neutral'][1],
+     TRAITS['interaction']['neutral'][1], AGES['youth']),    #
+    (TRAITS['socialization']['neutral'][2],
+     TRAITS['interaction']['neutral'][2], AGES['youth']),    #
+    (TRAITS['socialization']['neutral'][3],
+     TRAITS['interaction']['neutral'][3], AGES['youth']),    #
+    (TRAITS['socialization']['neutral'][4],
+     TRAITS['interaction']['neutral'][4], AGES['youth']),    #
+    (TRAITS['socialization']['negative'][0],
+     TRAITS['interaction']['negative'][0], AGES['youth']),  #
+    (TRAITS['socialization']['negative'][1],
+     TRAITS['interaction']['negative'][1], AGES['youth']),  #
+    (TRAITS['socialization']['negative'][2],
+     TRAITS['interaction']['negative'][2], AGES['youth']),  #
+    (TRAITS['socialization']['negative'][3],
+     TRAITS['interaction']['negative'][3], AGES['youth']),  #
+    (TRAITS['socialization']['negative'][4],
+     TRAITS['interaction']['negative'][4], AGES['youth']),  #
+
+    # Cognition to Identity
+    (TRAITS['cognition']['positive'][0], TRAITS['identity']
+     ['positive'][0], AGES['adolescent']),  #
+    (TRAITS['cognition']['positive'][1], TRAITS['identity']
+     ['positive'][1], AGES['adolescent']),  #
+    (TRAITS['cognition']['positive'][2], TRAITS['identity']
+     ['positive'][2], AGES['adolescent']),  #
+    (TRAITS['cognition']['positive'][3], TRAITS['identity']
+     ['positive'][3], AGES['adolescent']),  #
+    (TRAITS['cognition']['positive'][4], TRAITS['identity']
+     ['positive'][4], AGES['adolescent']),  #
+    (TRAITS['cognition']['neutral'][0], TRAITS['identity']
+     ['neutral'][0], AGES['adolescent']),    #
+    (TRAITS['cognition']['neutral'][1], TRAITS['identity']
+     ['neutral'][1], AGES['adolescent']),    #
+    (TRAITS['cognition']['neutral'][2], TRAITS['identity']
+     ['neutral'][2], AGES['adolescent']),    #
+    (TRAITS['cognition']['neutral'][3], TRAITS['identity']
+     ['neutral'][3], AGES['adolescent']),    #
+    (TRAITS['cognition']['neutral'][4], TRAITS['identity']
+     ['neutral'][4], AGES['adolescent']),    #
+    (TRAITS['cognition']['negative'][0], TRAITS['identity']
+     ['negative'][0], AGES['adolescent']),  #
+    (TRAITS['cognition']['negative'][1], TRAITS['identity']
+     ['negative'][1], AGES['adolescent']),  #
+    (TRAITS['cognition']['negative'][2], TRAITS['identity']
+     ['negative'][2], AGES['adolescent']),  #
+    (TRAITS['cognition']['negative'][3], TRAITS['identity']
+     ['negative'][3], AGES['adolescent']),  #
+    (TRAITS['cognition']['negative'][4], TRAITS['identity']
+     ['negative'][4], AGES['adolescent']),  #
+
+    # Identity to Morals
+    (TRAITS['identity']['positive'][0], TRAITS['morals']
+     ['positive'][0], AGES['mature']),  #
+    (TRAITS['identity']['positive'][1], TRAITS['morals']
+     ['positive'][1], AGES['mature']),  #
+    (TRAITS['identity']['positive'][2], TRAITS['morals']
+     ['positive'][2], AGES['mature']),  #
+    (TRAITS['identity']['positive'][3], TRAITS['morals']
+     ['positive'][3], AGES['mature']),  #
+    (TRAITS['identity']['positive'][4], TRAITS['morals']
+     ['positive'][4], AGES['mature']),  #
+    (TRAITS['identity']['neutral'][0], TRAITS['morals']
+     ['neutral'][0], AGES['mature']),    #
+    (TRAITS['identity']['neutral'][1], TRAITS['morals']
+     ['neutral'][1], AGES['mature']),    #
+    (TRAITS['identity']['neutral'][2], TRAITS['morals']
+     ['neutral'][2], AGES['mature']),    #
+    (TRAITS['identity']['neutral'][3], TRAITS['morals']
+     ['neutral'][3], AGES['mature']),    #
+    (TRAITS['identity']['neutral'][4], TRAITS['morals']
+     ['neutral'][4], AGES['mature']),    #
+    (TRAITS['identity']['negative'][0], TRAITS['morals']
+     ['negative'][0], AGES['mature']),  #
+    (TRAITS['identity']['negative'][1], TRAITS['morals']
+     ['negative'][1], AGES['mature']),  #
+    (TRAITS['identity']['negative'][2], TRAITS['morals']
+     ['negative'][2], AGES['mature']),  #
+    (TRAITS['identity']['negative'][3], TRAITS['morals']
+     ['negative'][3], AGES['mature']),  #
+    (TRAITS['identity']['negative'][4], TRAITS['morals']
+     ['negative'][4], AGES['mature']),  #
+
+    # Cognition to Ambition
+    (TRAITS['cognition']['positive'][2],
+     TRAITS['ambition']['positive'][0], AGES['prime']),  #
+    (TRAITS['cognition']['positive'][3],
+     TRAITS['ambition']['positive'][1], AGES['prime']),  #
+    (TRAITS['cognition']['positive'][4],
+     TRAITS['ambition']['positive'][2], AGES['prime']),  #
+    (TRAITS['cognition']['neutral'][1], TRAITS['ambition']
+     ['neutral'][0], AGES['prime']),    #
+    (TRAITS['cognition']['neutral'][2], TRAITS['ambition']
+     ['neutral'][1], AGES['prime']),    #
+    (TRAITS['cognition']['neutral'][3], TRAITS['ambition']
+     ['neutral'][2], AGES['prime']),    #
+    (TRAITS['cognition']['negative'][1],
+     TRAITS['ambition']['negative'][0], AGES['prime']),  #
+    (TRAITS['cognition']['negative'][2],
+     TRAITS['ambition']['negative'][1], AGES['prime']),  #
+    (TRAITS['cognition']['negative'][3],
+     TRAITS['ambition']['negative'][2], AGES['prime']),  #
+
+    # Morals to Perspective
+    (TRAITS['morals']['positive'][0], TRAITS['perspective']
+     ['positive'][0], AGES['sage']),  #
+    (TRAITS['morals']['positive'][1], TRAITS['perspective']
+     ['positive'][1], AGES['sage']),  #
+    (TRAITS['morals']['positive'][2], TRAITS['perspective']
+     ['positive'][2], AGES['sage']),  #
+    (TRAITS['morals']['neutral'][0], TRAITS['perspective']
+     ['neutral'][0], AGES['sage']),    #
+    (TRAITS['morals']['neutral'][1], TRAITS['perspective']
+     ['neutral'][1], AGES['sage']),    #
+    (TRAITS['morals']['neutral'][2], TRAITS['perspective']
+     ['neutral'][2], AGES['sage']),    #
+    (TRAITS['morals']['negative'][0], TRAITS['perspective']
+     ['negative'][0], AGES['sage']),  #
+    (TRAITS['morals']['negative'][1], TRAITS['perspective']
+     ['negative'][1], AGES['sage']),  #
+    (TRAITS['morals']['negative'][2], TRAITS['perspective']
+     ['negative'][2], AGES['sage']),  #
+
+    # Perspective to Legacy
+    (TRAITS['perspective']['positive'][0],
+     TRAITS['legacy']['positive'][0], AGES['sage']),  #
+    (TRAITS['perspective']['positive'][1],
+     TRAITS['legacy']['positive'][1], AGES['sage']),  #
+    (TRAITS['perspective']['positive'][2],
+     TRAITS['legacy']['positive'][2], AGES['sage']),  #
+    (TRAITS['perspective']['neutral'][0],
+     TRAITS['legacy']['neutral'][0], AGES['sage']),    #
+    (TRAITS['perspective']['neutral'][1],
+     TRAITS['legacy']['neutral'][1], AGES['sage']),    #
+    (TRAITS['perspective']['negative'][0],
+     TRAITS['legacy']['negative'][0], AGES['sage']),  #
+    (TRAITS['perspective']['negative'][1],
+     TRAITS['legacy']['negative'][1], AGES['sage']),  #
+    (TRAITS['perspective']['negative'][2],
+     TRAITS['legacy']['negative'][2], AGES['sage']),  #
 ]
 
-TRAIT_SYNERGIES = [   
+for first, second, age in TRAIT_EVOLUTIONS:
+    print(str(first))
+    print(str(second))
+    print(str(age))
+
+TRAIT_SYNERGIES = [
     (('curious', 'inquisitive'), 'enhances learning speed for knowledge-seeking skills'),
     (('cheerful', 'optimistic'), 'boosts creativity-related skill gains'),
     (('friendly', 'empathetic'), 'improves social relationships and diplomacy'),
@@ -133,9 +220,11 @@ TRAIT_SYNERGIES = [
     (('insecure', 'self-doubting'), 'improves self-awareness and personal growth'),
     (('stubborn', 'unyielding'), 'increases determination and perseverance'),
     (('uncritical', 'naive'), 'improves open-mindedness and adaptability'),
-    (('distracted', 'disorganized'), 'reduces procrastination and improves time management'),
+    (('distracted', 'disorganized'),
+     'reduces procrastination and improves time management'),
     (('manipulative', 'deceptive'), 'increases persuasion and negotiation skills'),
-    (('confrontational', 'aggressive'), 'increases assertiveness and conflict resolution skills'),
+    (('confrontational', 'aggressive'),
+     'increases assertiveness and conflict resolution skills'),
     (('workaholic', 'obsessive'), 'increases productivity and work efficiency'),
     (('indecisive', 'hesitant'), 'improves decision-making and risk-taking'),
     (('materialistic', 'greedy'), 'increases wealth and material possessions'),
@@ -144,7 +233,8 @@ TRAIT_SYNERGIES = [
     (('cynical', 'jaded'), 'increases skepticism and critical thinking'),
     (('regretful', 'remorseful'), 'improves self-awareness and personal growth'),
     (('bitter', 'resentful'), 'increases emotional intensity and motivation'),
-    (('disengaged', 'detached'), 'reduces emotional attachment and increases independence'),
+    (('disengaged', 'detached'),
+     'reduces emotional attachment and increases independence'),
     (('controlling', 'manipulative'), 'increases persuasion and negotiation skills'),
     (('resentful', 'vindictive'), 'increases motivation and drive'),
     (('mentoring', 'guiding'), 'improves leadership and teaching skills'),
@@ -164,6 +254,3 @@ TRAIT_SYNERGIES = [
     (('reflective', 'philosophical'), 'deepens understanding and wisdom'),
     (('authentic', 'principled'), 'promotes integrity and trustworthiness'),
 ]
-
-for before, after, age in TRAIT_EVOLUTIONS:
-    print("Your character's "+before+"trait evolved into "+after+"in the "+age+"stage og their life")
