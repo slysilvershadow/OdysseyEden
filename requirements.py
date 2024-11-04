@@ -1,2 +1,15 @@
-import pipreqs
-pipreqs /workspaces/OdysseyEden/src
+pygame 
+moog-games
+pygments
+numpy
+spriteworld
+pillow 
+sckit-learn
+six
+dm-env
+absl-py
+enum34
+matplotlib
+mock
+imageio
+mss
