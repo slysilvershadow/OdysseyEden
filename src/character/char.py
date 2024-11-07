@@ -7,6 +7,11 @@ import needs
 class Character:
     def __init__(self):
         self.id = uuid.uuid4()
+		self.components = {}
+		
+	def add_component(self, component):
+		self.components[type(component)] = component
+		return self
 		
 class Looks:
 	def __init__(self, sprite):

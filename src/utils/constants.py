@@ -1,7 +1,46 @@
 # constants.py
 
+class AssetPath:
+	PLAYER_SPRITE = 
+	CLOTHING_SPRITE = 
+	WALL_SPRITE = 
+	TILE_SPRITE = 
+	ANIMAL_SPRITE = 
+	TOOL_SPRITE = 
+	PLANT_SPRITE = 
+	FOOD_SPRITE = 
+	ROCK_SPRITE = 
+	COLLECTABLE_SPRITE = 
+	FSX_SPRITE = 
+	
+#Window
+class Window:
+	def __init__(self):
+		self.DEVICE_WIDTH = pygame.display.Info().current_w
+		self.DEVICE_HEIGHT = pygame.display.Info().current_h
+		self.DESIGN_WIDTH = 1080
+		self.DESIGN_HEIGHT = 1920
+		self.SCALE_X = self.DEVICE_WIDTH / self.DESIGN_WIDTH
+		self.SCALE_Y = self.DEVICE_HEIGHT / self.DESIGN_HEIGHT
+		self.FPS = 60
+
+	def scale_position(self, x, y):
+		return(x  * self.SCALE_X , y * self.SCALE_Y)
+
+	def scale_size(self, width, height):
+		return()
+
 #Worlds
 BIOMES = []
+
+class Biome:
+	def __init__(self):
+		pass
+
+class Layers:
+	def __init__(self):
+		pass
+
 
 #Time
 HOUR_LEN = 60
@@ -21,38 +60,40 @@ DAY_NAMES = ['Restony', 'Serement', 'Chronesis', 'Tempetude', 'Solament',
              'Helioris', 'Duratonis', 'Resporal', 'Sabbathal', 'Noctitude']
 
 # Character Needs
-MAX_HUNGER = 100
-MAX_THIRST = 100
-MAX_ENERGY = 100
-MAX_SOCIAL = 100
-MAX_RELIEF = 100
-MAX_CLEANLINESS = 100
-MAX_COMFORT = 100
-MAX_SAFETY = 100
-MAX_HEALTH = 100
-
-MIN_HUNGER = 0
-MIN_THIRST = 0
-MIN_ENERGY = 0
-MIN_SOCIAL = 0
-MIN_RELIEF = 0
-MIN_CLEANLINESS = 0
-MIN_COMFORT = 0
-MIN_SAFETY = 0
-MIN_HEALTH = 0
-
-# Default Decay rates
-HUNGER_DECAY = 2  # 2 points every in-game hour
-THIRST_DECAY = 3  # 3 points every in-game hour
-ENERGY_DECAY = 1  # 1 point every in-game hour
-SOCIAL_DECAY = 1  # 1 point every in-game hour
-RELIEF_DECAY = 2  # 2 points every in-game hour
-CLEANLINESS_DECAY = 0.5  # 0.5 points every in-game hour
-COMFORT_DECAY = 1  # 1 point every in-game hour
-SAFETY_DECAY = 0.2  # 0.2 points every in-game hour
-HEALTH_DECAY = 0.1  # 0.1 points every in-game hour
-
+class Needs:
+	#Max Need Value
+	MAX_HUNGER = 100
+	MAX_THIRST = 100
+	MAX_ENERGY = 100
+	MAX_SOCIAL = 100
+	MAX_RELIEF = 100
+	MAX_CLEANLINESS = 100
+	MAX_COMFORT = 100
+	MAX_SAFETY = 100
+	MAX_HEALTH = 100
+	#Minimum Need Value
+	MIN_HUNGER = 0
+	MIN_THIRST = 0
+	MIN_ENERGY = 0
+	MIN_SOCIAL = 0
+	MIN_RELIEF = 0
+	MIN_CLEANLINESS = 0
+	MIN_COMFORT = 0
+	MIN_SAFETY = 0
+	MIN_HEALTH = 0
+	# Default Decay rates
+	HUNGER_DECAY = 2  # 2 points every in-game hour
+	THIRST_DECAY = 3  # 3 points every in-game hour
+	ENERGY_DECAY = 1  # 1 point every in-game hour
+	SOCIAL_DECAY = 1  # 1 point every in-game hour
+	RELIEF_DECAY = 2  # 2 points every in-game hour
+	CLEANLINESS_DECAY = 0.5  # 0.5 points every in-game hour
+	COMFORT_DECAY = 1  # 1 point every in-game hour
+	SAFETY_DECAY = 0.2  # 0.2 points every in-game hour
+	HEALTH_DECAY = 0.1  # 0.1 points every in-game hour
+	
 # Character Traits
+class Traits:
 SEX = ['x', 'y']
 GENDER = ['masc', 'fem', 'androgynous']
 TONE = ['pale', 'medium', 'tan', 'dark', 'deep']
@@ -327,6 +368,9 @@ STATS = {
         'conviction': int,
         'vitality': int}
 }
+class Player_Stats:
+	def __init__(self):
+		pass
 
 SKILLS = {
     'survival': ['foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry'],
