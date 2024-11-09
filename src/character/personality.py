@@ -55,7 +55,7 @@ class Trait:
         return None
 
 
-class Personalitiy:
+class Personality:
     def __init__(self, age_group, traits=None):
         """
         Initialize a Personality object.

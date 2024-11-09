@@ -28,7 +28,9 @@ class Window:
 		return(x  * self.SCALE_X , y * self.SCALE_Y)
 
 	def scale_size(self, width, height):
-		return()
+		scale_width = width * self.SCALE_X
+		scale_heught = height * self.SCALE_Y
+		return(scale_width, scale_height)
 
 #Worlds
 BIOMES = []
@@ -368,9 +370,6 @@ STATS = {
         'conviction': int,
         'vitality': int}
 }
-class Player_Stats:
-	def __init__(self):
-		pass
 
 SKILLS = {
     'survival': ['foraging', 'hunting', 'fishing', 'cooking', 'fire-making', 'shelter-building', 'farming', 'tool crafting', 'animal husbandry'],
@@ -387,3 +386,4 @@ SKILLS = {
 
 #Possible responses from ai
 RESPONSES = ['receptive', 'motive', 'apprehensive', 'refusal']
+

@@ -3,6 +3,7 @@ from src.utils import constants as con
 from src.utils import constants as con
 import genes
 import needs
+import uuid
 
 class Character:
     def __init__(self):
