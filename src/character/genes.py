@@ -59,8 +59,7 @@ class DNA:
 
     def __repr__(self):
         return (f"DNA(gender={self.gender}, skin={self.skin}, height={self.height}, "
-                f"body={self.body}, hair={self.hair}, eyes={
-                    self.eyes}, nose={self.nose}, "
+                f"body={self.body}, hair={self.hair}, eyes={self.eyes}, nose={self.nose}, "
                 f"mouth={self.mouth}, ears={self.ears})")
 
     def __add__(self, other):

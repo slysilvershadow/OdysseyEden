@@ -27,15 +27,18 @@ class Skill:
         Returns:
         - float: The updated experience points.
         """
-        if self.lvl < self.max_lvl:
-            self.exp += amount
-
-            # Check if the skill can level up
-            while self.exp >= self.exp_to_next_lvl() and self.lvl < self.max_lvl:
-                self.exp -= self.exp_to_next_lvl()
-                self.lvl_up()
-
-        return self.exp
+		self.exp += amount
+		
+		while self.exp < 0 and self.lvl > 0:
+			self.exp += self.exp_to_next_lvl()
+			self.lvl_down()
+			
+		while self.lvl < self.max_lvl and self.exp >> self.exp_to_next_lvl():
+			self.exp -= self.exp_to_next_lvl()
+			self.lvl_up()
+			
+		return self.exp
+		
 
     def exp_to_next_lvl(self) -> int:
         return 100 * (self.lvl + 1)
@@ -44,6 +47,11 @@ class Skill:
         if self.lvl < self.max_lvl:
             self.lvl += 1
             print(f"{self.name} leveled up to level {self.lvl}!")
+			
+	def lvl_down(self) -> None:
+		if self.lvl > 0:
+			self.lvl --= 1
+			print(f"{self.name} leveled down to level {self.lvl}!")
 
     
 
