@@ -1,17 +1,3 @@
-pygame 
-moog-games
-pygments
-numpy
-spriteworld
-pillow 
-sckit-learn
-six
-matplotlib
-mock
-imageio
-mss
-namemaker
-
 absl-py         2.1.0
 contourpy       1.3.0
 cycler          0.12.1
@@ -40,3 +26,4 @@ setuptools      75.1.0
 six             1.16.0
 spriteworld     1.0.2
 threadpoolctl   3.5.0
+pygments        
