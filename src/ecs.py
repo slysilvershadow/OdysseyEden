@@ -46,33 +46,6 @@ class Entity:
     def use_component(self, component):
         pass
 
-    def interact(self, other_entity, action, componentsA, componentsB):
-        """
-        Interact with another entity if certain component conditions are met.
-
-        Parameters:
-            other_entity (Entity): The entity to interact with.
-
-        Returns:
-            str: A message indicating the result of the interaction.
-        """
-        # Example component types that are required for interaction
-        required_components = ['ComponentA', 'ComponentB']  # Replace with actual component names
-
-        # Check if the current entity has the required components
-        for component in required_components:
-            if component not in self.components:
-                return f"Interaction failed: Missing component '{component}' in the current entity."
-
-        # Check if the other entity has the required components
-        for component in required_components:
-            if component not in other_entity.components:
-                return f"Interaction failed: Missing component '{component}' in the other entity."
-
-        # If both entities have the required components, proceed with the interaction
-        # You can define what happens during the interaction here
-        return f"Interaction successful between {self.id} and {other_entity.id}."
-
 
 
 class Component:
@@ -116,7 +89,7 @@ class System:
         if entity in self.entities:
             self.entities.remove(entity)
 
-    def filter(self, entity):
+    def filter(self, entity, components):
         """
         Determine if an entity matches the filter criteria for this system.
 
