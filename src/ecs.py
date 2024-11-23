@@ -61,57 +61,23 @@ class Component:
 
 class System:
     def __init__(self):
-        """
-        Initialize a new system that manages a collection of entities.
-
-        Attributes:
-            entities (list): A list of entities that are part of this system.
-        """
         self.entities = []
 
-    def add_entity(self, entity):
-        """
-        Add an entity to the system if it matches the filter criteria.
-
-        Parameters:
-            entity (Entity): The entity to be added to the system.
-        """
-        if self.filter(entity):
+    def add_entity(self, entity, required_components: List[type] = None):
+        if required_components is None:
+            required_components = []
+        if self.filter(entity, required_components):
             self.entities.append(entity)
 
     def remove_entity(self, entity):
-        """
-        Remove an entity from the system.
-
-        Parameters:
-            entity (Entity): The entity to be removed from the system.
-        """
         if entity in self.entities:
             self.entities.remove(entity)
 
-    def filter(self, entity, components):
-        """
-        Determine if an entity matches the filter criteria for this system.
-
-        Parameters:
-            entity (Entity): The entity to check against the filter criteria.
-
-        Returns:
-            bool: True if the entity matches the criteria, otherwise False.
-        """
-        return False
-
-    def update(self, dt):
-        """
-        Update the system logic. This method should be implemented by subclasses.
-
-        Parameters:
-            dt (float): The time delta since the last update.
-        
-        Raises:
-            NotImplementedError: If the method is not implemented in a subclass.
-        """
-        raise NotImplementedError("Subclasses should implement this!")
+    def filter(self, entity: Entity, required_components: List[type]) -> bool:
+        for component in required_components:
+            if entity.get_component(component) is None:
+                return False
+        return True
 
 
 class EntityManager:
