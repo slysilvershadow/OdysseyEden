@@ -1,1 +1,1 @@
-from src.ecs import Component, Entity, System
+from src.MyAI.ecs import Component, Entity, System

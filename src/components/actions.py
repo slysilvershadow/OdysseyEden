@@ -1,6 +1,6 @@
 # actions.py
 from typing import Dict, Optional
-
+from .skills import Skill
 
 class Action:
     def __init__(self, name: str, skill_impacts: Optional[Dict[str, int]] = None):
@@ -27,7 +27,7 @@ class Action:
                 print(f"{self.name} added {exp} experience to {skill_name}.")
             else:
                 # Unlock new skill
-				new_skill = Skill(name=skill_name, group='default')
-				character_skills[skill_name] = new_skill
-				new_skill.add_exp(exp) # Add exp to the newly gained skill
-				print(f"{self.name} unlocked {skill_name} and added {exp} experience points to it.")
+                new_skill = Skill(name=skill_name, group='default')
+                character_skills[skill_name] = new_skill
+                new_skill.add_exp(exp) # Add exp to the newly gained skill
+                print(f"{self.name} unlocked {skill_name} and added {exp} experience points to it.")

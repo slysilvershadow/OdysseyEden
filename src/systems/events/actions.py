@@ -1,24 +1,25 @@
 from typing import List
 from src.ecs import Component, Entity, System
 
-class Interaction(System):
-    def __init__(self):
-        super().__init__()
+class Interaction:
+    def __init__(self, entity: Entity):
+        self.entity = entity  # Reference to the entity this interaction belongs to
 
-    def check_viable_actions(self, entity1: Entity, entity2: Entity) -> List[str]:
+    def check_viable_actions(self, other_entity: Entity) -> List[str]:
         viable_actions = []
 
-        # Example checks based on components
-        if entity1.get_component(Position) and entity2.get_component(Position):
-            viable_actions.append("move closer")
-
-        if entity1.get_component(Interactable) and entity2.get_component(Interactor):
+        # Add more checks for other actions as needed
+        if self.entity.get_component(Interactor) and other_entity.get_component(Interactable):
             viable_actions.append("interact")
 
-        if entity1.get_component(Combatant) and entity2.get_component(Combatant):
-            viable_actions.append("fight")
 
         return viable_actions
+    
+    def trigger_action(self, action: str, other_entity: Entity) -> None:
+        if action == "interact":
+            self.perform_interaction(other_entity)
+        else:
+            print(f"Action '{action}' is not recognized.")
 
-    def add_entity(self, entity: Entity, required_components: List[type]):
-        super().add_entity(entity, required_components)
+    def perform_interaction(self, other_entity: Entity):
+        print(f"{self.entity.id} interacts with {other_entity.id}.")

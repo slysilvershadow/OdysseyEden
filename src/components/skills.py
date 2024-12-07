@@ -3,10 +3,9 @@
 class Skill:
     def __init__(self, name: str, group: str, lvl: int = 0, exp: float = 0.0, max_lvl: int = 20):
         """
-        Initialize a skill object.
-
+        Initialize a skill object
         Parameters:
-        - name (str): The name of the skill.
+            - name (str): The name of the skill.
         - group (str): The catagory that the skill belongs to.
         - lvl (int): The current level of the skill.
         - exp (float): The current experience points for the skill.
@@ -15,43 +14,38 @@ class Skill:
         self.name: str = name
         self.lvl: int = lvl
         self.exp: float = exp
-        self.max_lvl: int = max_lvl
-
+        self.max_lvl: int = max_lv
     def add_exp(self, amount: float) -> float:
         """
-        Add experience points and check if the skill should level up.
-
+        Add experience points and check if the skill should level up
         Parameters:
-        - amount (float): The amount of experience to add.
-
+            - amount (float): The amount of experience to add
         Returns:
-        - float: The updated experience points.
+            - float: The updated experience points.
         """
-		self.exp += amount
-		
-		while self.exp < 0 and self.lvl > 0:
-			self.exp += self.exp_to_next_lvl()
-			self.lvl_down()
-			
-		while self.lvl < self.max_lvl and self.exp >> self.exp_to_next_lvl():
-			self.exp -= self.exp_to_next_lvl()
-			self.lvl_up()
-			
-		return self.exp
-		
+        self.exp += amount
 
+        while self.exp < 0 and self.lvl > 0:
+            self.exp += self.exp_to_next_lvl()
+            self.lvl_down()
+
+        while self.lvl < self.max_lvl and self.exp ≥ self.exp_to_next_lvl():
+            self.exp -= self.exp_to_next_lvl()
+            self.lvl_up()
+
+        return self.exp
+    
     def exp_to_next_lvl(self) -> int:
-        return 100 * (self.lvl + 1)
-
+            return 100 * (self.lvl + 1)
     def lvl_up(self) -> None:
-        if self.lvl < self.max_lvl:
-            self.lvl += 1
+            if self.lvl < self.max_lvl:
+                self.lvl += 1
             print(f"{self.name} leveled up to level {self.lvl}!")
-			
-	def lvl_down(self) -> None:
-		if self.lvl > 0:
-			self.lvl --= 1
-			print(f"{self.name} leveled down to level {self.lvl}!")
+    
+    def lvl_down(self) -> None:
+        	if self.lvl > 0:
+        		self.lvl --= 1
+    		print(f"{self.name} leveled down to level {self.lvl}!"
 
     
 

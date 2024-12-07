@@ -1,5 +1,4 @@
-from ..utils import constants
-from constants import AGES, TRAITS
+from src.utils.constants import AGES, TRAITS
 
 CATEGORIES_PER_AGE = {
     AGES['infant']: TRAITS['temperament'],
